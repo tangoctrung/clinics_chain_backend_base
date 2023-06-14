@@ -1,0 +1,29 @@
+syntax = "proto3";
+package authservice;
+
+//import "const.proto";
+
+option go_package = "./pb/authpb";
+
+
+service AuthService {
+   rpc CreateNewUser(NewUser) returns (User) {}
+}
+
+message NewUser {
+   string name = 1;
+   int32 age = 2;
+   string phoneNumber = 3;
+   string email = 4;
+   string password = 5;
+}
+
+message User {
+   string name = 1;
+   int32 age = 2;
+   string phoneNumber = 3;
+   string email = 4;
+   string password = 5;
+   string id = 6;
+}
+
